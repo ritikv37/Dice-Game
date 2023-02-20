@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+    body{
+        background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        /* font-family: 'Montserrat', sans-serif; */
+        font-family: 'Josefin Sans', sans-serif;
+        
+    }
+    .main{
+        height: 100vh;
+        text-align: center;
+
+    }
+    .flex{
+        display: flex;
+        gap: 20px; 
+        margin-left: 36%;     
+    }
+    .img img{
+        height: 200px;
+        width: 200px;
+        border-radius:10px;
+        margin-bottom: 20px;
+    }
+    
+    button{
+        padding: 8px 30px;
+        background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);        
+        border-radius: 5px;
+        box-shadow: #fc6076;
+    }
+    @media only screen and (min-width:320px) and (max-width:480px){
+        .img img{
+        height: 100px;
+        width: 100px;
+    } 
+    .flex{
+        margin-left: 14%;
+    }
+    }
+</style>
+
+
+<div class="main">
+    <h1>Dice Game</h1>
+    <h1  id="won1" style="color:#1a73e8d4"></h1>
+    <h1 id="won2" style="color:#cd10efd1"></h1>
+    <div class="div-img flex">
+        <div class="img"><img id="img1" src="../img/dice1.png" alt=""></div>
+        <div class="img"><img id="img2" src="../img/dice2.png" alt=""></div>
+    </div>
+    <button onclick="fun()">Roll</button>
+    <h1 id="won">start</h1>
+</div>
+    <script>
+
+        var val1 = prompt("enter first player name")
+        var val2 = prompt("enter second player name")
+       
+        var won1 = document.getElementById("won1");
+        var won2 = document.getElementById("won2");
+        var won = document.getElementById("won")
+        won1.innerHTML = val1 +":- " + "0"
+        won2.innerHTML = val2 + ":- "+ "0"
+
+
+        a =0
+        b =0
+        function fun(){
+            var img1 = document.getElementById("img1")
+            var img2 = document.getElementById("img2")
+
+            var arr = ["../img/dice1.png","../img/dice2.png","../img/dice3.png","../img/dice4.png","../img/dice5.png","../img/dice6.png"]
+
+            for(var i=0;i<arr.length;i++){
+                var ran1 = Math.trunc(Math.random()*6)
+                var ran2 = Math.trunc(Math.random()*6)
+        }      
+        img1.src = arr[ran1]
+        img2.src = arr[ran2]
+        if(ran1==ran2){
+            won.innerHTML= "Match is Draw"
+        }else if(ran1>ran2){
+            won.innerHTML = val1 + "  1 wins"
+            a += 1;
+            won1.innerHTML = val1 + ":- "+ a
+
+        }else{
+            won.innerHTML= val2+ " 2 Wins"
+            b += 1;
+            won2.innerHTML = val2 + ":- "+ b
+        }  
+    }
+    </script>
+</body>
+</html>
