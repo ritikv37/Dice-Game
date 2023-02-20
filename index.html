@@ -56,8 +56,8 @@
     <h1  id="won1" style="color:#1a73e8d4"></h1>
     <h1 id="won2" style="color:#cd10efd1"></h1>
     <div class="div-img flex">
-        <div class="img"><img id="img1" src="../img/dice1.png" alt=""></div>
-        <div class="img"><img id="img2" src="../img/dice2.png" alt=""></div>
+        <div class="img"><img id="img1" src="./img/dice1.png" alt=""></div>
+        <div class="img"><img id="img2" src="./img/dice2.png" alt=""></div>
     </div>
     <button onclick="fun()">Roll</button>
     <h1 id="won">start</h1>
@@ -80,7 +80,7 @@
             var img1 = document.getElementById("img1")
             var img2 = document.getElementById("img2")
 
-            var arr = ["../img/dice1.png","../img/dice2.png","../img/dice3.png","../img/dice4.png","../img/dice5.png","../img/dice6.png"]
+            var arr = ["./img/dice1.png","./img/dice2.png","./img/dice3.png","./img/dice4.png","./img/dice5.png","./img/dice6.png"]
 
             for(var i=0;i<arr.length;i++){
                 var ran1 = Math.trunc(Math.random()*6)
